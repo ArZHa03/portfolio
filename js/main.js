@@ -157,7 +157,10 @@ function themeLightDark() {
 
   if (localStorage.getItem('theme-dark') !== null) {
     themeMode();
+  } else {
+    document.body.classList.add('t-dark');
   }
+
   if (document.body.classList.contains('t-dark')) {
     darkModeCheckbox.checked = true;
   }
@@ -187,8 +190,11 @@ function themeGlassEffect() {
       glassStyle.disabled = true;
     }
   }
+  
   if (localStorage.getItem('glass-effect') !== null) {
     glass();
+  } else {
+    glassStyle.removeAttribute('disabled');
   }
 
   if (!glassStyle.hasAttribute('disabled')) {
